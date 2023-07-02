@@ -1,18 +1,13 @@
 import Item from './Item';
 
-const initialItems = [
-  { id: 1, description: 'Passports', quantity: 2, packed: true },
-  { id: 2, description: 'Socks', quantity: 12, packed: false },
-];
-
-export const PackingList = () => {
+export const PackingList = ({ itens, setItens, onDelete }) => {
   return (
     <div className='list'>
-      <ul >
-        {initialItems.map((item) => (
-          <Item key={item.id} item={item} />
+      <ul>
+        {itens.map((item) => (
+          <Item key={item.id} item={item} updateItens={setItens} onDelete={onDelete} />
         ))}
-    </ul>
+      </ul>
     </div>
   );
 };

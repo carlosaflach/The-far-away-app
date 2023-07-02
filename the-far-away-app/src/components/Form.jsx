@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const Form = () => {
+export const Form = ({ setItens }) => {
   const [description, setDescription] = useState('');
   const [quantity, setQuantity] = useState(1);
 
@@ -11,6 +11,8 @@ export const Form = () => {
 
     const newItem = { description, quantity, packed: false, id: Date.now() };
     console.log('newItem', newItem);
+
+    setItens((prev) => [...prev, newItem]);
 
     setDescription('');
     setQuantity(1);
