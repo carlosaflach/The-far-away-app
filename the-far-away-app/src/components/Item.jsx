@@ -1,10 +1,17 @@
-function Item({ item, onDelete }) {
+function Item({ item, onDeleteItem, onToggleItem }) {
   return (
     <li value={item.id}>
+      <input
+        type='checkbox'
+        value={item.packed}
+        onChange={() => {
+          onToggleItem(item.id);
+        }}
+      />
       <span style={item.packed ? { textDecoration: 'line-through' } : {}}>
         {item.quantity} {item.description}
       </span>
-      <button onClick={() => onDelete(item.id)}>❌</button>
+      <button onClick={() => onDeleteItem(item.id)}>❌</button>
     </li>
   );
 }
