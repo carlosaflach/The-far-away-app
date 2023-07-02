@@ -12,15 +12,18 @@ export default function App() {
   const [itens, setItens] = useState(initialItems);
 
   const removeItem = (id) => {
-    console.log('id', id);
-
     setItens(itens.filter((item) => item.id !== id));
   };
+
+  const handleToggleItem = (id) => {
+    setItens((items) => items.map((item) => (item.id === id ? { ...item, packed: !item.packed } : item)));
+  };
+
   return (
     <div className='app'>
       <Logo />
-      <Form setItens={setItens} />
-      <PackingList itens={itens} setItens={setItens} onDelete={removeItem} />
+      <Form onAddItem={setItens} />
+      <PackingList itens={itens} onDeleteItem={removeItem} onToggleItem={handleToggleItem} />
       <Stats />
     </div>
   );
