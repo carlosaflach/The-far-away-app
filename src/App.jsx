@@ -19,11 +19,16 @@ export default function App() {
     setItens((items) => items.map((item) => (item.id === id ? { ...item, packed: !item.packed } : item)));
   };
 
+  const handleDeleteAllItens = () => {
+    const confirmed = window.confirm('Are you sure you want to delete all items?');
+    confirmed && setItens([]);
+  };
+
   return (
     <div className='app'>
       <Logo />
       <Form onAddItem={setItens} />
-      <PackingList itens={itens} onDeleteItem={removeItem} onToggleItem={handleToggleItem} />
+      <PackingList itens={itens} onDeleteItem={removeItem} onToggleItem={handleToggleItem} onDeleteAllItens={handleDeleteAllItens} />
       <Stats itens={itens} />
     </div>
   );
