@@ -1,3 +1,3 @@
 export const Logo = () => {
-  return <h1>FarWay Logo</h1>;
+  return <h1>🏖️ Far Away App 🧳</h1>;
 };
