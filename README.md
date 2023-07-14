@@ -4,7 +4,7 @@
 
 This project was one of the very first projects that I've created while I was learning about React.
 <br><br>
-The project's similar to a TODO List project, but as I rewrite the project I changed the context to a travel list. Besides that, I've applied some styles to make the application looks good. <br/>
+The project's similar to a TODO List project, but as I rewrite the project I changed the context to a travel list. Besides that, I've applied some simple styles to make the application looks good. <br/>
 
 ---
 
